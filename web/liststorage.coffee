@@ -4,7 +4,7 @@ class module.exports.ListStorage
   constructor: ->
     @ready = false
     @collection = null
-    MongoClient.connect 'mongodb://db_1:27017/list', (err, db) =>
+    MongoClient.connect 'mongodb://db:27017/list', (err, db) =>
       throw err if err
       db.createCollection 'list', (err, collection) =>
         throw err if err
