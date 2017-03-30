@@ -2,7 +2,7 @@
 
 ## Working with docker-compose
 
-This example run a small node js server listening on port 3001. In order to work with docker-compose we use a `docker-compose.yml` file. 
+This example you will have the following small sample app running on Docker using a *MongoDB* database and a *NodeJS* web server in two separate containers:
 
 Now let´s start our ping server
 
@@ -12,7 +12,7 @@ $ docker-compose run --service-ports echo
 ```
 The above commands, will build the container and run the container (exposing the service ports). 
 
-We now should be able to access the ping server locally at port 3001.
+We now should be able to access the app locally at port 8080.
 
 ```sh
 http://localhost:8080
@@ -21,3 +21,5 @@ http://localhost:8080
 The configuration used to build and run the container can be found in `docker-compose.yml`.
 
 
+
+Based on: [Orchestrate multiple docker containers simply using FIG](https://www.packtpub.com/books/content/orchestrate-multiple-docker-containers-simply-using-fig)
