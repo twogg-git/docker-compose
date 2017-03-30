@@ -1,6 +1,9 @@
 web:
-  build: .
-  volumes:
-    - "./app:/src/app"
+  build: ./web
   ports:
-    - "3030:3000"
+    - "8080:8080"
+  links:
+    - db
+
+db:
+  image: mongo:2.6
