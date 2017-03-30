@@ -4,7 +4,7 @@
 
 This example run a small node js server listening on port 3001. In order to work with docker-compose we use a `docker-compose.yml` file. 
 
-Before using docker-compose we need to install our package.json with
+Before using docker-compose we need to install al NodeJS dependencies list in our package.json file.
 ```sh
 $ npm install
 ```

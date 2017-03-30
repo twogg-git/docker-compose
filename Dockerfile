@@ -1,13 +1,16 @@
-#
 # Docker compose
-# 
 # Dockerfile reference: https://docs.docker.com/engine/reference/builder/
 
-FROM mhart/alpine-node:latest
-COPY . /code
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-RUN chmod +x /docker-entrypoint.sh
-WORKDIR /code
+FROM node:0.10.38
+
+RUN mkdir /src
+
+RUN npm install express-generator -g
+
+WORKDIR /src
+ADD app/package.json /src/package.json
 RUN npm install
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["node"]
+
+EXPOSE 3000
+
+CMD node app/bin/www

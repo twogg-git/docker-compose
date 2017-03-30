@@ -1,8 +1,6 @@
-echo:
+web:
   build: .
-  ports:
-    - 3001:80
   volumes:
-    - ./:/code
-  environment:
-    APPENV: hello docker-compose!
+    - "./app:/src/app"
+  ports:
+    - "3030:3000"
